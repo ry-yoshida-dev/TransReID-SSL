@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transreid-ssl"
+version = "2.0.0"
+authors = [
+    { name = "damo-cv" },
+    { name = "Ryuto Yoshida" },
+]
+description = "Inference-only TransReID PyTorch backbones (ViT / Swin) from TransReID-SSL."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["Person Re-Identification", "Transformer", "Computer Vision"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.0.0",
+    "twine>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ry-yoshida-dev/TransReID-SSL"
+"Upstream" = "https://github.com/damo-cv/TransReID-SSL"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+transreid_pytorch = ["py.typed"]
